@@ -9,5 +9,5 @@ resource "aws_route53_record" "test" {
   name    = "${var.subdomain}.${var.domain_name}"
   type    = "A"
   ttl = 60
-  records = [var.dr_switchover ? aws_instance.dr_webserver.public_ip : aws_instance.prod_webserver.public_ip]
+  records = [var.dr_switchover ? aws_instance.dr_webserver[0].public_ip : aws_instance.prod_webserver.public_ip]
 }

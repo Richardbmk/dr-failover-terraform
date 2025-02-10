@@ -5,7 +5,7 @@ output "production_public_ip" {
 }
 
 output "dr_public_ip" {
-  value       = aws_instance.dr_webserver.public_ip
+  value       = var.dr_switchover && length(aws_instance.dr_webserver) > 0 ? aws_instance.dr_webserver[0].public_ip : null
   description = "Public IP of the DR EC2 instance"
   sensitive   = false
 }

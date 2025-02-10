@@ -1,5 +1,6 @@
 # Disaster Recovery EC2 Instance
 resource "aws_instance" "dr_webserver" {
+  count                  = var.dr_switchover ? 1 : 0
   provider               = aws.dr
   ami                    = var.dr_ami_id
   instance_type          = var.instance_type
