@@ -7,7 +7,7 @@ variable "prod_ami_id" {
 variable "dr_ami_id" {
   type        = string
   description = "AMI ID for the DR EC2 instance"
-  default = "ami-03d49b144f3ee2dc4" # Amazon Linux 2023 us-west-1
+  default = "ami-04e7764922e1e3a57" # Amazon Linux 2023 eu-west-1
 }
 
 variable "instance_type" {
@@ -19,12 +19,13 @@ variable "instance_type" {
 variable "key_name" {
   type        = string
   description = "Name of the EC2 instances SSH key pair"
-  default     = "test"
+  default     = "test-sre"
 }
 
 variable "domain_name" {
   type        = string
   description = "(ex: example.com)"
+  default     = "ricardoboriba.net"
 }
 
 variable "subdomain" {

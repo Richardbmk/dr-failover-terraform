@@ -6,6 +6,6 @@ provider "aws" {
 
 # Disaster Recovery AWS Region
 provider "aws" {
-  region = "us-west-1"
+  region = "eu-west-1"
   alias  = "dr"
 }
